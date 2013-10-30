@@ -1,0 +1,108 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>Test One</title>
+<meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+    
+<link href="libs/jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css"/>
+<link href="libs/jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css"/>
+<script src="libs/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="libs/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+
+<link href="assets/style/style.css" rel="stylesheet" type="text/css"/>
+
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8">
+    document.addEventListener("deviceready", onDeviceReady, false);    // Wait for Cordova to load
+    function onDeviceReady() {// Cordova is ready
+        //alert('*** Device is ready ***');
+    }
+</script>
+
+</head> 
+
+<script>
+
+	function init(){
+		onAppResize();
+	}
+	
+	function onAppResize(){
+		
+		var headerH = $('#headerDiv_catering').height();
+		var footerH = $('#footerDiv_catering').height();
+	
+		if(footerH == 0 || headerH == 0){
+			headerH = 55;
+			footerH = 20;
+		}
+		
+		var appHeight = window.innerHeight;
+		var contentH = appHeight-(headerH+footerH)-45;
+		document.getElementById('contentDiv_catering').style.height = contentH+'px';
+		
+		
+	}
+	
+	function onMenuLinkClick(type){
+		document.location.href = 	type+'.html';
+	}
+	
+	function onEmailSendClick(){
+		document.location.href = '#aboutUsPage';
+		//<li><a onclick="location.href='HotelBooking.html';" href="HotelBooking.html">BOOK A ROOM</a></li>
+	}
+	$("#imgzoom").imageZoom();
+</script>
+<body onResize="onAppResize()" onLoad="init()">
+	<!-- Gallery START -->
+    <div data-role="page" id="cateringPage">
+    	<div id="headerDiv_catering" data-role="header">
+            <img id="gallery_header" src="assets/image/header_gallery_icon_03.png" height="70.8%" width="70%" />
+            <img id="abouticon_header2" src="assets/image/header_gallery.png" height="70.8%" />
+       </div>
+        
+       <div id="contentDiv_catering" data-role="content" style="height:320px;overflow-x:auto;">
+         <div class="ui-grid-a">
+           <div class="ui-block-a"><img src="assets/image/Ilfornetto1.jpg" width="120" height="100" style="border:2px solid; border-radius:5px;"/></div>
+           <div class="ui-block-b"><img src="assets/image/Ilfornetto2.jpg"  width="120" height="100" style="border:2px solid; border-radius:5px;"/></div>
+           <div class="ui-block-a"><img src="assets/image/Ilfornetto3.jpg"  width="120" height="100" style="border:2px solid; border-radius:5px;"/></div>
+           <div class="ui-block-b"><img src="assets/image/Ilfornetto4.jpg" width="120" height="100" style="border:2px solid; border-radius:5px;"/></div>
+           <div class="ui-block-a"><img src="assets/image/Ilfornetto5.jpg" width="120" height="100" style="border:2px solid; border-radius:5px;"/></div>
+           <div class="ui-block-b"><img src="assets/image/Ilfornetto6.jpg" width="120" height="100" style="border:2px solid; border-radius:5px;"/></div>
+           <div class="ui-block-a"><img src="assets/image/Ilfornetto7.jpg" width="120" height="100" style="border:2px solid; border-radius:5px;"/></div>
+           <div class="ui-block-b"><img src="assets/image/Ilfornetto8.jpg" width="120" height="100" style="border:2px solid; border-radius:5px;"/></div>
+           <div class="ui-block-a"><img src="assets/image/Ilfornetto9.jpg" width="120" height="100" style="border:2px solid; border-radius:5px;"/></div>
+           <div class="ui-block-b"><img src="assets/image/Ilfornetto10.jpg" width="120" height="100" style="border:2px solid; border-radius:5px;"/></div>
+           <div class="ui-block-a"><img src="assets/image/Ilfornetto11.jpg" width="120" height="100" style="border:2px solid; border-radius:5px;"/></div>
+           <div class="ui-block-b"><img src="assets/image/Ilfornetto12.jpg" width="120" height="100" style="border:2px solid; border-radius:5px;"/></div>
+           <div class="ui-block-a"><img src="assets/image/Ilfornetto13.jpg" width="120" height="100" style="border:2px solid; border-radius:5px;"/></div>
+           <div class="ui-block-b"><img src="assets/image/Ilfornetto14.jpg" width="120" height="100" style="border:2px solid; border-radius:5px;"/></div>
+           <div class="ui-block-a"><img src="assets/image/Ilfornetto15.jpg" width="120" height="100" style="border:2px solid; border-radius:5px;"/></div>
+           <div class="ui-block-b"><img src="assets/image/Ilfornetto17.jpg" width="120" height="100" style="border:2px solid; border-radius:5px;"/></div>
+           <div class="ui-block-a"><img src="assets/image/Ilfornetto18.jpg" width="120" height="100" style="border:2px solid; border-radius:5px;"/></div>
+           <div class="ui-block-b"><img src="assets/image/Ilfornetto19.jpg" width="120" height="100" style="border:2px solid; border-radius:5px;"/></div>
+           <div class="ui-block-a"><img src="assets/image/Ilfornetto20.jpg" width="120" height="100" style="border:2px solid; border-radius:5px;"/></div>
+           <div class="ui-block-b"><img src="assets/image/Ilfornetto21.jpg" width="120" height="100" style="border:2px solid; border-radius:5px;"/></div>
+         </div>
+         <!--<img src="assets/image/gallery.jpg" width="100%" />-->
+       </div>
+       
+    	<div id="footerDiv_catering" data-role="footer" data-id="foo3" data-position="fixed">
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a id="aboutUsBtn" href="#" onClick="document.location.href='index.html'" data-icon="aboutUs" class="">&nbsp;</a></li>
+                    <li><a id="menuBtn" href="#" onClick="document.location.href='catering.html'" data-icon="menuIcon">&nbsp;</a></li>            
+                    <li><a id="cateringBtn" href="#" onClick="document.location.href='gallery.html'" data-icon="cateringIcon" class="ui-btn-active ui-state-persist">&nbsp;</a></li>
+                    <li><a id="o	rderUsBtn" data-icon="orderIcon" href="direction.html" onClick="document.location.href='contact.html'" class="" >&nbsp;</a>
+                    </li>
+                    <li><a id="contactUsBtn" href="#" onClick="document.location.href='contact.html'" data-icon="contactUsIcon">&nbsp;</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- /footer -->
+    </div>  
+</body>
+</html>

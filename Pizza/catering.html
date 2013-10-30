@@ -1,0 +1,100 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>Test One</title>
+<meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+    
+<link href="libs/jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css"/>
+<link href="libs/jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css"/>
+<script src="libs/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="libs/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+
+<link href="assets/style/style.css" rel="stylesheet" type="text/css"/>
+
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8">
+    document.addEventListener("deviceready", onDeviceReady, false);    // Wait for Cordova to load
+    function onDeviceReady() {// Cordova is ready
+        //alert('*** Device is ready ***');
+    }
+</script>
+
+</head> 
+
+<script>
+
+	function init(){
+		onAppResize();
+	}
+	
+	function onAppResize(){
+		var headerH = document.getElementById('headerDiv_menu').style.height;
+		var footerH = document.getElementById('footerDiv_menu').style.height;
+		headerH = $('#headerDiv_menu').height();
+		footerH = $('#footerDiv_menu').height();
+	
+		if(footerH == 0 || headerH == 0){
+			headerH = 55;
+			footerH = 20;
+		}
+		
+		var appHeight = window.innerHeight;
+		var contentH = appHeight-(headerH+footerH)-45;
+		document.getElementById('contentDiv_menu').style.height = contentH+'px';
+		//document.getElementById('cateringPdfIframe').style.height = contentH+'px';
+		
+	}
+	
+	function onMenuLinkClick(type){
+		document.location.href = 	type+'.html';
+	}
+	
+	function onEmailSendClick(){
+		document.location.href = '#aboutUsPage';
+		//<li><a onclick="location.href='HotelBooking.html';" href="HotelBooking.html">BOOK A ROOM</a></li>
+	}
+	$("#imgzoom").imageZoom();
+</script>
+<body onResize="onAppResize()" onLoad="init()"> 
+
+   <!-- catering page START -->
+    
+    <div data-role="page" id="menuPage">
+       <div id="headerDiv_menu" data-role="header">
+            <img id="abouticon_header" src="assets/image/header_catering_icon.png" height="70.8%" width="70%" />
+            <img id="abouticon_header2" src="assets/image/header_catering.png" height="70.8%" />            
+       </div>
+        <div style="background:#4A1212; margin:0; padding:0;">
+        <div id="aboutTxt">
+       <div id="contentDiv_menu" data-role="content" style="height:320px;">	
+          <div data-role="navbar" data-iconpos="top">
+             <p>Do you have an upcoming event or party? Leave the details for all of your special occasions to the expert caterers at Il Fornetto Trattoria. Whether you are planning a corporate luncheon, family gathering, or just an old-fashioned get-together, Il Fornetto will ensure that your day will be truly distinctive and memorable.</p>
+
+<p>Please call us at (732) 972-6663 to speak to Alex or Alfredo.</p>
+<div id="social">
+	<img src="assets/image/follow_us_03.png" width="37.6%" height="6.2%">
+  <img src="assets/image/facebook_icon_03.png" width="16%" style="cursor:pointer;" height="15.8%" onClick="window.open('https://m.facebook.com/ilfornettotrattorianj','_system','location=yes');">
+</div>
+            
+         </div>
+       </div>
+       </div>
+       </div>
+       <div id="footerDiv_menu" data-role="footer" data-id="foo2" data-position="fixed">
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a id="aboutUsBtn" href="index.html" data-icon="aboutUs" class="">&nbsp;</a></li>
+                    <li><a id="menuBtn" href="catering.html" data-icon="menuIcon" class="ui-btn-active ui-state-persist">&nbsp;</a></li>            
+                    <li><a id="cateringBtn" href="gallery.html" data-icon="cateringIcon">&nbsp;</a></li>
+                    <li><a id="orderUsBtn" data-icon="orderIcon" href="direction.html" >&nbsp;</a>
+                    </li>
+                    <li><a id="contactUsBtn" href="contact.html" data-icon="contactUsIcon">&nbsp;</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- /footer -->
+    </div>
+	</body>
+</html>
